@@ -1,0 +1,27 @@
+.hero{
+   --clr-accent : #faa700;
+  color: #fff;
+  text-align: center;
+  padding: 15em 0;
+  // misal gambar gagaldi load: kasih bg hitam aja sebagai gantinya
+  background: #222;
+  // cek suportifitas browser
+  @supports(background-blend-mode: multiply){
+    background: url('../img/shoe-3.png') no-repeat,
+    radial-gradient(#444,#111);
+    //background-size: contain;
+    background-blend-mode: multiply;
+    background-position: center center;
+    // suapaya img tidak bergerak ketika scroll
+    background-attachment: fixed;
+  }
+}
+
+.primary-title{
+  // font-size: 4rem;
+   font-size: clamp(3rem, calc(5vh + 1rem), 4.5rem);
+   line-height: 1.1;
+   text-transform: uppercase;
+  // text-align: center;
+ }
+

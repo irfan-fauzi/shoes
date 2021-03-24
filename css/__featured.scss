@@ -1,0 +1,59 @@
+// featured------
+.featured{
+  background: #eeeeee;
+  &__item{
+    display: block;
+    color: red;
+    position: relative;
+    transform: scale(.85);
+    transition: $transition;
+    text-align: center;
+    color: #333;
+    
+    &:focus,
+    &:hover{
+      transform: scale(1);
+      .featured__details{
+        opacity: 1;
+        text-shadow: 0 0 2em rgba(#fff,1);
+      }
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      // untuk membuat komponen ini full
+      padding: 75% 75% 0 0;
+      background: #2193b0;
+      border-radius: 50%;
+      top: 10%;
+      left: 10%;
+      z-index: -1;
+    }
+  }
+  &__details{
+    opacity: 0;
+    transition: opacity 250ms linear;
+    span{
+      display: block;
+     // color: red;
+      font-weight: 700;
+      font-size: 2.5rem;
+      line-height: 1.2;
+    }
+    
+  }
+}
+////
+
+.split{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  &>*{
+    flex-basis: 30%;
+    min-width: 15em;
+    //margin: auto;
+   // border: blue solid 1px;
+  }
+}

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700&display=swap');
+$transition:  transform 250ms ease-in-out;
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.6;
+}
+img{
+  max-width: 100%;
+  display: block;
+}
+h1,h2,h3,p{
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+// base reset----------------------
+
+// ilmu baru, otomatis akan menambahkan margin-top
+.spacing>*+*{
+  margin-top: var(--spacer, 2rem);
+}
+.container{
+  width: 85%;
+  max-width: 65em;
+  margin: 0 auto;
+  //border: blue solid 1px;
+}
+.btn{
+  // btn disarankan pakai inline-block
+  display: inline-block;
+  text-decoration: none;
+  padding: .5em 1.25em;
+  background: var(--clr-accent,blue);
+  color: var(--clr-text,#fff);
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: .25em;
+  cursor: pointer;
+  // transistion
+  transition: 
+    transform 250ms ease-in-out,
+    opacity 175ms linear;
+}
+
+.btn:hover,
+.btn:focus{
+  transform: scale(1.1);
+  opacity: .9;
+}
+section{
+  padding: 7em 0;
+}
+
+.section-title{
+  text-align: center;
+  font-size: clamp(2.5rem, calc(5vh + 1rem), 4rem);
+  line-height: 1;
+  text-transform: capitalize;
+  color: #17353d;
+  margin-bottom: 5rem;
+}

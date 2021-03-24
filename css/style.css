@@ -1,7 +1,221 @@
-* {
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700&display=swap");
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.spacing > * + * {
+  margin-top: var(--spacer, 2rem);
+}
+
+.container {
+  width: 85%;
+  max-width: 65em;
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: .5em 1.25em;
+  background: var(--clr-accent, blue);
+  color: var(--clr-text, #fff);
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: .25em;
+  cursor: pointer;
+  -webkit-transition: opacity 175ms linear, -webkit-transform 250ms ease-in-out;
+  transition: opacity 175ms linear, -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, opacity 175ms linear;
+  transition: transform 250ms ease-in-out, opacity 175ms linear, -webkit-transform 250ms ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: .9;
+}
+
+section {
+  padding: 7em 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(2.5rem, calc(5vh + 1rem), 4rem);
+  line-height: 1;
+  text-transform: capitalize;
+  color: #17353d;
+  margin-bottom: 5rem;
+}
+
+.hero {
+  --clr-accent: #faa700;
+  color: #fff;
+  text-align: center;
+  padding: 15em 0;
+  background: #222;
+}
+
+@supports (background-blend-mode: multiply) {
+  .hero {
+    background: url("../img/shoe-3.png") no-repeat, radial-gradient(#444, #111);
+    background-blend-mode: multiply;
+    background-position: center center;
+    background-attachment: fixed;
+  }
+}
+
+.primary-title {
+  font-size: clamp(3rem, calc(5vh + 1rem), 4.5rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.featured {
+  background: #eeeeee;
+}
+
+.featured__item {
+  display: block;
+  color: red;
+  position: relative;
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  text-align: center;
+  color: #333;
+}
+
+.featured__item:focus, .featured__item:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.featured__item:focus .featured__details, .featured__item:hover .featured__details {
+  opacity: 1;
+  text-shadow: 0 0 2em white;
+}
+
+.featured__item::after {
+  content: "";
+  position: absolute;
+  padding: 75% 75% 0 0;
+  background: #2193b0;
+  border-radius: 50%;
+  top: 10%;
+  left: 10%;
+  z-index: -1;
+}
+
+.featured__details {
+  opacity: 0;
+  -webkit-transition: opacity 250ms linear;
+  transition: opacity 250ms linear;
+}
+
+.featured__details span {
+  display: block;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.split {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.split > * {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  min-width: 15em;
+}
+
+.product {
+  background: radial-gradient(var(--clr-inner, yellow), var(--clr-outer, red));
+  padding: 3em;
+  border-radius: 3em;
+  margin-bottom: 3em;
+  text-align: center;
+}
+
+.product__title {
+  font-size: clamp(3rem, calc(5vh + 1rem), 5.5rem);
+  color: #fff;
+  text-shadow: 0 0 0.2rem black;
+  line-height: 1.1;
+}
+
+.product__image {
+  margin: -5em 0 0 0;
+}
+
+@media (min-width: 45em) {
+  .product {
+    text-align: left;
+  }
+  .product__title {
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .product__image {
+    float: right;
+    width: 65%;
+    shape-outside: circle(40%);
+    margin: 0 -5em 0 0;
+  }
+}
+
+.shoe-red {
+  --clr-inner: #faa700;
+  --clr-outer: #e48d00;
+  --clr-accent: #a1173c;
+}
+
+.shoe-blue {
+  --clr-inner:  #6dd5ed;
+  --clr-outer: #2193b0;
+  --clr-accent: #2f4858;
+}
+
+.shoe-white {
+  --clr-inner: #fce46b;
+  --clr-outer: #eac886;
+  --clr-accent: #2f4858;
 }
 /*# sourceMappingURL=style.css.map */
